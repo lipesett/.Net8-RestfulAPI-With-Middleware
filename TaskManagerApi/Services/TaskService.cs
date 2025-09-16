@@ -1,4 +1,5 @@
-﻿using TaskManagerApi.Interfaces;
+﻿using TaskManagerApi.Exceptions;
+using TaskManagerApi.Interfaces;
 using TaskManagerApi.Models;
 
 namespace TaskManagerApi.Services
@@ -28,17 +29,26 @@ namespace TaskManagerApi.Services
         {
             return await _taskRepository.GetAllTasksAsync();
         }
+
         public async Task<TaskItem?> GetTaskByIdAsync(int id)
         {
-            return await _taskRepository.GetTaskByIdAsync(id);
+            var task = await _taskRepository.GetTaskByIdAsync(id);
+            
+            if (task == null)
+            {
+                throw new NotFoundException($"Task with ID {id} not found");
+            }
+
+            return task;
         }
+
         public async Task UpdateAsync(TaskItem task)
         {
             // some business logic could go here
             var existingTask = await _taskRepository.GetTaskByIdAsync(task.Id);
             if (existingTask == null)
             {
-                throw new Exception($"Task with ID {task.Id} not found.");
+                throw new NotFoundException($"Task with ID {task.Id} not found.");
             }
 
             existingTask.Title = task.Title;

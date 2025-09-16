@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TaskManagerApi.Data;
 using TaskManagerApi.Data.Repositories;
 using TaskManagerApi.Interfaces;
+using TaskManagerApi.Middleware;
 using TaskManagerApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

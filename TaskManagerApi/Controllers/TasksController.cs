@@ -29,12 +29,6 @@ namespace TaskManagerApi.Controllers
         public async Task<ActionResult<TaskItem>> GetTask(int id)
         {
             var task = await _taskService.GetTaskByIdAsync(id);
-
-            if (task == null)
-            {
-                return NotFound(); // return 404 if task not found
-            }
-
             return Ok(task);
         }
 
@@ -65,11 +59,6 @@ namespace TaskManagerApi.Controllers
         public async Task<IActionResult> DeleteTask(int id)
         {
             var task = await _taskService.GetTaskByIdAsync(id);
-
-            if (task == null)
-            {
-                return NotFound();
-            }
 
             await _taskService.DeleteAsync(id);
             return NoContent();
