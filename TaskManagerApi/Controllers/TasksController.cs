@@ -44,13 +44,7 @@ namespace TaskManagerApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(int id, TaskItem task)
         {
-            if (id != task.Id)
-            {
-                return BadRequest();
-            }
-
-            await _taskService.GetTaskByIdAsync(id);
-
+            await _taskService.UpdateAsync(id, task);
             return NoContent();
         }
 

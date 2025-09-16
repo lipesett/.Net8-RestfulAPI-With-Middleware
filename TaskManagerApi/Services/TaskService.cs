@@ -42,10 +42,16 @@ namespace TaskManagerApi.Services
             return task;
         }
 
-        public async Task UpdateAsync(TaskItem task)
+        public async Task UpdateAsync(int id, TaskItem task)
         {
             // some business logic could go here
+            if (id != task.Id)
+            {
+                throw new BadRequestException("Route ID does not match request body ID.");
+            }
+
             var existingTask = await _taskRepository.GetTaskByIdAsync(task.Id);
+
             if (existingTask == null)
             {
                 throw new NotFoundException($"Task with ID {task.Id} not found.");
