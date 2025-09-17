@@ -4,8 +4,6 @@
 
 This repository contains a complete RESTful API for a task manager, developed with .NET 8 and C# 11. The project was built from scratch with the goal of demonstrating development best practices, including Clean Architecture, SOLID principles, and robust error handling.
 
-This project is part of a guided learning journey, showcasing the step-by-step construction of a professional-grade API. The art style for this series is called "Haunted Tales Style".
-
 ## 🚀 Concepts and Technologies Applied
 
 This project serves as a practical demonstration of the following concepts and technologies:
@@ -80,8 +78,6 @@ To run this project locally, follow the steps below:
 ![.NET](https://img.shields.io/badge/.NET-8-blueviolet) ![C#](https://img.shields.io/badge/C%23-11-blue) ![SQLite](https://img.shields.io/badge/SQLite-3-blue) ![Arquitetura Limpa](https://img.shields.io/badge/Arquitetura-Limpa-orange) ![Princípios SOLID](https://img.shields.io/badge/SOLID-Principles-brightgreen)
 
 Este repositório contém uma API RESTful completa para um gerenciador de tarefas, desenvolvida com .NET 8 e C# 11. O projeto foi construído do zero com o objetivo de demonstrar as melhores práticas de desenvolvimento, incluindo Arquitetura Limpa (Clean Architecture), princípios SOLID e tratamento de erros robusto.
-
-Este projeto faz parte de uma jornada de aprendizado guiada, demonstrando a construção passo a passo de uma API de nível profissional. O estilo de arte desta série se chama "Estilo Haunted Tales".
 
 ## 🚀 Conceitos e Tecnologias Aplicadas
 
