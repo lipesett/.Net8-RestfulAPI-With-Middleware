@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TaskManagerApi.Dtos;
 using TaskManagerApi.Interfaces;
 using TaskManagerApi.Models;
 
@@ -18,7 +19,7 @@ namespace TaskManagerApi.Controllers
 
         // GET: api/tasks
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TaskItem>>> GetTasks()
+        public async Task<ActionResult<IEnumerable<TaskDto>>> GetTasks()
         {
             var tasks = await _taskService.GetAllTasksAsync();
             return Ok(tasks);
@@ -26,7 +27,7 @@ namespace TaskManagerApi.Controllers
 
         // GET: api/tasks/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<TaskItem>> GetTask(int id)
+        public async Task<ActionResult<TaskDto>> GetTask(int id)
         {
             var task = await _taskService.GetTaskByIdAsync(id);
             return Ok(task);
@@ -34,7 +35,7 @@ namespace TaskManagerApi.Controllers
 
         // POST: api/tasks
         [HttpPost]
-        public async Task<ActionResult<TaskItem>> CreateTask(TaskItem task)
+        public async Task<ActionResult<TaskItem>> CreateTask(CreateUpdateTaskDto task)
         {
             var createdTask = await _taskService.CreateTaskAsync(task);
             return CreatedAtAction(nameof(GetTask), new { id = createdTask.Id }, createdTask);
@@ -42,7 +43,7 @@ namespace TaskManagerApi.Controllers
 
         // PUT: api/tasks/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTask(int id, TaskItem task)
+        public async Task<IActionResult> UpdateTask(int id, CreateUpdateTaskDto task)
         {
             await _taskService.UpdateAsync(id, task);
             return NoContent();
