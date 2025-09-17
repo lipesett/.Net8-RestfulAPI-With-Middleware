@@ -1,6 +1,6 @@
 # Task Manager RESTful API - .NET 8 Portfolio
 
-![.NET](https://img.shields.io/badge/.NET-8-blueviolet) ![C#](https://img.shields.io/badge/C%23-11-blue) ![SQLite](https://img.shields.io/badge/SQLite-3-blue) ![Clean Architecture](https://img.shields.io/badge/Architecture-Clean-orange)
+![.NET](https://img.shields.io/badge/.NET-8-blueviolet) ![C#](https://img.shields.io/badge/C%23-11-blue) ![SQLite](https://img.shields.io/badge/SQLite-3-blue) ![Clean Architecture](https://img.shields.io/badge/Architecture-Clean-orange) ![SOLID Principles](https://img.shields.io/badge/SOLID-Principles-brightgreen)
 
 This repository contains a complete RESTful API for a task manager, developed with .NET 8 and C# 11. The project was built from scratch with the goal of demonstrating development best practices, including Clean Architecture, SOLID principles, and robust error handling.
 
