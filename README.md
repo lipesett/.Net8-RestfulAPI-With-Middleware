@@ -48,27 +48,38 @@ To run this project locally, follow the steps below:
     ```
     (Remember to replace `SEU-USUARIO` with your GitHub username)
 
-2.  **Navigate to the solution folder:**
+2.  **Navigate to the project folder:**
     ```bash
-    cd .Net8-RestfulAPI-With-Middleware
+    cd .Net8-RestfulAPI-With-Middleware/TaskManagerApi
     ```
 
-3.  **Create the database (Migration):**
-    The project is configured with Entity Framework Core. To create the local SQLite database, run the following command from the project folder (`TaskManagerApi`):
-    ```bash
-    cd TaskManagerApi
-    dotnet ef database update
-    ```
-    This will create the `tasks.db` file with the necessary table.
+3.  **Prepare the Database (First time only):**
+    This command creates the `tasks.db` database file. The command you use depends on your terminal.
 
-4.  **Run the application:**
-    Still in the `TaskManagerApi` folder, run the command:
+    * **If you are using a standard terminal (Git Bash, PowerShell, CMD):**
+        First, you may need to install the EF Core global tool (you only need to do this once per machine):
+        ```bash
+        dotnet tool install --global dotnet-ef
+        ```
+        Then, run the update command:
+        ```bash
+        dotnet ef database update
+        ```
+
+    * **If you are using the Visual Studio Package Manager Console (PMC):**
+        Simply run the command:
+        ```powershell
+        Update-Database
+        ```
+
+4.  **Run the Application:**
+    This is the command you will use daily to start the API server.
     ```bash
     dotnet run
     ```
 
 5.  **Access the Swagger documentation:**
-    The API will be running locally. Open your browser and navigate to the application URL (usually `https://localhost:7XXX/swagger`) to see the interactive documentation and test the endpoints.
+    The API will be running locally. Open your browser and navigate to the application URL indicated in the terminal (usually `https://localhost:7XXX/swagger`) to see the interactive documentation and test the endpoints.
 
 ---
 ---
@@ -123,24 +134,35 @@ Para executar este projeto localmente, siga os passos abaixo:
     ```
     (Lembre-se de substituir `SEU-USUARIO` pelo seu nome de usuário do GitHub)
 
-2.  **Navegue até a pasta da solução:**
+2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd .Net8-RestfulAPI-With-Middleware
+    cd .Net8-RestfulAPI-With-Middleware/TaskManagerApi
     ```
 
-3.  **Crie o banco de dados (Migration):**
-    O projeto está configurado com o Entity Framework Core. Para criar o banco de dados SQLite local, execute o seguinte comando na pasta do projeto (`TaskManagerApi`):
-    ```bash
-    cd TaskManagerApi
-    dotnet ef database update
-    ```
-    Isso irá criar o arquivo `tasks.db` com a tabela necessária.
+3.  **Prepare o Banco de Dados (Apenas na primeira vez):**
+    Este comando cria o arquivo de banco de dados `tasks.db`. O comando a ser usado depende do seu terminal.
 
-4.  **Execute a aplicação:**
-    Ainda na pasta `TaskManagerApi`, execute o comando:
+    * **Se você estiver usando um terminal padrão (Git Bash, PowerShell, CMD):**
+        Primeiro, pode ser necessário instalar a ferramenta global do EF Core (você só precisa fazer isso uma vez por máquina):
+        ```bash
+        dotnet tool install --global dotnet-ef
+        ```
+        Em seguida, execute o comando de atualização:
+        ```bash
+        dotnet ef database update
+        ```
+
+    * **Se você estiver usando o Package Manager Console (PMC) do Visual Studio:**
+        Simplesmente execute o comando:
+        ```powershell
+        Update-Database
+        ```
+
+4.  **Execute a Aplicação:**
+    Este é o comando que você usará no dia a dia para iniciar o servidor da API.
     ```bash
     dotnet run
     ```
 
 5.  **Acesse a documentação do Swagger:**
-    A API estará rodando localmente. Abra seu navegador e acesse a URL da aplicação (geralmente `https://localhost:7XXX/swagger`) para ver a documentação interativa e testar os endpoints.
+    A API estará rodando localmente. Abra seu navegador e acesse a URL indicada no terminal (geralmente `https://localhost:7XXX/swagger`) para ver a documentação interativa e testar os endpoints.
