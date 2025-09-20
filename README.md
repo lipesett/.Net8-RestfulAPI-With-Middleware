@@ -86,7 +86,7 @@ To run this project locally, follow the steps below:
 
 # API RESTful de Gerenciador de Tarefas - Portfólio .NET 8
 
-![.NET](https://img.shields.io/badge/.NET-8-blueviolet) ![C#](https://img.shields.io/badge/C%23-11-blue) ![SQLite](https://img.shields.io/badge/SQLite-3-blue) ![Arquitetura Limpa](https://img.shields.io/badge/Arquitetura-Limpa-orange) ![Princípios SOLID](https://img.shields.io/badge/SOLID-Principles-brightgreen)
+![.NET](https://img.shields.io/badge/.NET-8-blueviolet) ![C#](https://img.shields.io/badge/C%23-11-blue) ![SQLite](https://img.shields.io/badge/SQLite-3-blue) ![Arquitetura Limpa](https://img.shields.io/badge/Arquitetura-Limpa-orange) ![Princípios SOLID](https://img.shields.io/badge/Princípios-SOLID-brightgreen)
 
 Este repositório contém uma API RESTful completa para um gerenciador de tarefas, desenvolvida com .NET 8 e C# 11. O projeto foi construído do zero com o objetivo de demonstrar as melhores práticas de desenvolvimento, incluindo Arquitetura Limpa (Clean Architecture), princípios SOLID e tratamento de erros robusto.
 
